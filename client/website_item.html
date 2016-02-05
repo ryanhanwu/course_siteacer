@@ -1,0 +1,25 @@
+<!-- template that displays individual website entries -->
+<template name="website_item">
+  <li class="website-item">
+    <div class="vote">
+      <a href="#" class="vote-btn up js-upvote">
+        <span class="fa fa-angle-up" aria-hidden="true"></span>
+      </a>
+      <span class="number">
+        {{vote}}
+      </span>
+      <a href="#" class="vote-btn down js-downvote">
+        <span class="fa fa-angle-down" aria-hidden="true"></span>
+      </a>
+    </div>
+    <a class="title" href="{{url}}">{{title}}</a>
+    <p>
+      {{description}}
+      <br>
+      <span class="created">
+        Created {{created createdOn}}
+      </span>
+    </p>
+
+  </li>
+</template>

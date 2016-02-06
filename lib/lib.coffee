@@ -6,10 +6,11 @@ Websites.allow
     !!userId
   update: (userId, doc, fieldNames, modifier) ->
     !!userId
-  remove: (userId, doc) ->
-    !!userId
 
 Websites.deny
+  insert: (userId, doc) -> true
+  update: (userId, doc, fieldNames, modifier) ->
+    !userId
   remove: (userId, doc) -> true
 
 Comments.allow
@@ -18,7 +19,13 @@ Comments.allow
   update: (userId, doc, fieldNames, modifier) ->
     !!userId and doc.creator is userId
   remove: (userId, doc) ->
-    !!userId
+    !!userId and doc.creator is userId
 
 Comments.deny
+  insert: (userId, doc) -> true
+  update: (userId, doc, fieldNames, modifier) -> true
   remove: (userId, doc) -> true
+
+@User =
+  isLoggedIn: () ->
+    !!Meteor.users.findOne()

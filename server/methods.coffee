@@ -32,15 +32,17 @@ Meteor.methods
     imgs = [
       "http://placehold.it/350x150"
       $('img').first().attr('src')
-      $('meta[name="og:image"]').attr('content')
+      $('meta[property="og:image"]').attr('content')
       $('meta[name="twitter:image"]').attr('content')
     ]
     next = true
     while (next)
       img = imgs.pop()
       if !!img
-        if img.startsWith("http")
+        if img.startsWith("http") or img.startsWith('data') or img.startsWith('//')
           website.img = img
+        else if website.url.endsWith('/') and img.startsWith('/')
+          website.img = website.url + img.replace('/','')
         else
           website.img = website.url + img
         next = false

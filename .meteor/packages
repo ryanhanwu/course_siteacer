@@ -18,8 +18,9 @@ ecmascript              # Enable ECMAScript2015+ syntax in app code
 
 check
 http
-
 coffeescript
+spiderable
+
 fourseven:scss
 twbs:bootstrap
 ian:accounts-ui-bootstrap-3
@@ -32,4 +33,4 @@ multiply:iron-router-progress
 momentjs:moment
 mrt:cheerio
 easy:search
-spiderable
+underscorestring:underscore.string

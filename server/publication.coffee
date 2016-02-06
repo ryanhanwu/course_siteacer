@@ -1,6 +1,7 @@
 Meteor.publish 'websites', () ->
   [
     Websites.find()
+    Votes.find()
   ]
 
 Meteor.publish 'website', (website_id) ->

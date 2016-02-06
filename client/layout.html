@@ -7,7 +7,7 @@
 	<nav class="navbar navbar-default navbar-fixed-top">
 	  <div class="container">
 	    <div class="navbar-header">
-	      <a class="navbar-brand" href="#">
+	      <a class="navbar-brand" href="{{pathFor 'index'}}">
 	        Site Acer
 	      </a>
 	    </div>
@@ -19,7 +19,7 @@
 	    </div>
 	  </div>
 	</nav>
-	{{#momentum plugin='slide-height'}}
+	{{#momentum plugin='iron-router' options=transition}}
 		{{>yield}}
 	{{/momentum}}
 	<footer class="footer">

@@ -30,10 +30,10 @@ Meteor.methods
           website.description = title
           next = false
     imgs = [
-      "http://placehold.it/350x150"
+      "http://placehold.it/200x150"
       $('img').first().attr('src')
-      $('meta[property="og:image"]').attr('content')
       $('meta[name="twitter:image"]').attr('content')
+      $('meta[property="og:image"]').attr('content')
     ]
     next = true
     while (next)

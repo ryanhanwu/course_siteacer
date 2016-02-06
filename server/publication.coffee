@@ -5,6 +5,6 @@ Meteor.publish 'websites', () ->
 
 Meteor.publish 'website', (website_id) ->
   [
-    Websites.findOne website_id
+    Websites.find website_id
     Comments.find website: website_id
   ]

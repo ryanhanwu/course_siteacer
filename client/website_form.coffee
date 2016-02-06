@@ -1,7 +1,3 @@
-Template.website_form.helpers
-  isLoggedIn: () ->
-    User.isLoggedIn()
-
 Template.website_form.events
   'submit .js-save-website-form': (event) ->
     if User.isLoggedIn()

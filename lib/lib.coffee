@@ -8,7 +8,8 @@ Websites.allow
     !!userId
 
 Websites.deny
-  insert: (userId, doc) -> true
+  insert: (userId, doc) ->
+    !userId
   update: (userId, doc, fieldNames, modifier) ->
     !userId
   remove: (userId, doc) -> true
@@ -17,15 +18,19 @@ Comments.allow
   insert: (userId, doc) ->
     !!userId
   update: (userId, doc, fieldNames, modifier) ->
-    !!userId and doc.creator is userId
+    !!userId and doc.createdBy is userId
   remove: (userId, doc) ->
-    !!userId and doc.creator is userId
+    !!userId and doc.createdBy is userId
 
 Comments.deny
-  insert: (userId, doc) -> true
-  update: (userId, doc, fieldNames, modifier) -> true
+  insert: (userId, doc) ->
+    !userId
+  update: (userId, doc, fieldNames, modifier) ->
+    !userId
   remove: (userId, doc) -> true
 
 @User =
   isLoggedIn: () ->
     !!Meteor.users.findOne()
+  current: () ->
+    Meteor.users.findOne()

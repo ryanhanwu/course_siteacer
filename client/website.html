@@ -1,0 +1,28 @@
+<template name="website">
+  <div class="container">
+    <div class="jumbotron well">
+      <h3>{{title}}</h3>
+      <p>{{description}}</p>
+      <a href="{{url}}" target="siteacer">{{url}}</a>
+    </div>
+    {{#if isLoggedIn}}
+      <form class="js-comment-website-form">
+        <div class="form-group">
+          <textarea name="content" class="form-control" rows="4"></textarea>
+        </div>
+        <button type="submit" class="btn btn-primary">Submit</button>
+      </form>
+    {{else}}
+      <div class="alert alert-warning" role="alert">
+        Please login to comment
+      </div>
+    {{/if}}
+    <div class="comments">
+    {{#momentum plugin="fade"}}
+      {{#each comments}}
+        {{>website_comment}}
+      {{/each}}
+    {{/momentum}}
+    </div>
+  </div>
+</template>

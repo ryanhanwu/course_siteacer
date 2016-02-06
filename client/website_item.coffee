@@ -1,8 +1,3 @@
-
-Template.website_item.helpers
-  created: (date) ->
-    moment(date).fromNow()
-
 Template.website_item.events
   'click .js-upvote': (event) ->
     website_id = @_id

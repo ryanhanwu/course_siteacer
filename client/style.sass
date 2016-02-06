@@ -9,7 +9,6 @@ body
   padding-top: 60px
   padding-bottom: 60px
 
-
 /* website_form */
 #website_form
   position: absolute
@@ -25,13 +24,14 @@ body
 
 /* website-item */
 .website-item
+  &:hover
+    background: rgba(235, 235, 235, 0.5)
   position: relative
-  padding: 4px 10px 10px 30px
-  margin-bottom: 15px
+  padding: 15px 15px 5px 50px
   .vote
     position: absolute
-    top: 0
-    left: 0
+    top: 10px
+    left: 15px
     .vote-btn
       text-align: center
       display: block
@@ -43,10 +43,26 @@ body
       font-size: 1.2em
   .title
     font-size: 1.4em
+  .url
+    color: #CA8807
+    font-size: 0.9em
   .img
     float: right
+    margin-left: 10px
     max-width: 150px
-  .created
+    max-height: 100px
+  .createdOn
+    font-size: 0.9em
+    color: #999
+
+/* website_comment */
+.comment
+  margin: 10px 0 15px 0
+  border-bottom: 1px solid rgba(214, 211, 211, 0.42)
+  padding-bottom: 5px
+  .createdBy
+    font-size: 0.9em
+  .createdOn
     font-size: 0.9em
     color: #999
 

@@ -16,16 +16,18 @@ standard-minifiers      # JS/CSS minifiers run for production mode
 es5-shim                # ECMAScript 5 compatibility for older browsers.
 ecmascript              # Enable ECMAScript2015+ syntax in app code
 
+http
+coffeescript
+fourseven:scss
 twbs:bootstrap
 ian:accounts-ui-bootstrap-3
-accounts-password
-coffeescript
-iron:router
 natestrauser:font-awesome
+accounts-password
+percolate:momentum
+iron:router
+mrt:nprogress
 multiply:iron-router-progress
 momentjs:moment
-fourseven:scss
-houston:admin
-http
-mrt:nprogress
 mrt:cheerio
+
+spiderable

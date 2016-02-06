@@ -1,5 +1,5 @@
 @Websites = new (Mongo.Collection)('websites')
-@Comments = new Mongo.Collection('comments');
+@Comments = new (Mongo.Collection)('comments')
 
 Websites.allow
   insert: (userId, doc) ->
@@ -16,7 +16,7 @@ Comments.allow
   insert: (userId, doc) ->
     !!userId
   update: (userId, doc, fieldNames, modifier) ->
-    !!userId
+    !!userId and doc.creator is userId
   remove: (userId, doc) ->
     !!userId
 

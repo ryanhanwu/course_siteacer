@@ -39,7 +39,7 @@ Template.website_form.events
       title: target.title.value
     if !!target.url.value
       NProgress.start()
-      Meteor.call "getTitle", data, (err, response) ->
+      Meteor.call "addSite", data, (err, response) ->
         NProgress.done()
         $('#website_form').toggle 'slow'
     false

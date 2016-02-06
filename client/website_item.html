@@ -13,6 +13,9 @@
       </a>
     </div>
     <a class="title" href="{{url}}">{{title}}</a>
+    {{#if img}}
+      <img class="img" src="{{img}}" />
+    {{/if}}
     <p>
       {{description}}
       <br>
@@ -20,6 +23,5 @@
         Created {{created createdOn}}
       </span>
     </p>
-
   </li>
 </template>

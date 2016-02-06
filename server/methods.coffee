@@ -1,8 +1,9 @@
 
 Meteor.methods
-  getTitle: (target) ->
+  addSite: (target) ->
     website = {}
     website.url = target.url
+    console.log "Adding", website.url
     result = HTTP.get website.url
     $ = cheerio.load result.content, xmlMode: true
     if target.title
@@ -28,7 +29,21 @@ Meteor.methods
         if !!title
           website.description = title
           next = false
-
+    imgs = [
+      "http://placehold.it/350x150"
+      $('img').first().attr('src')
+      $('meta[name="og:image"]').attr('content')
+      $('meta[name="twitter:image"]').attr('content')
+    ]
+    next = true
+    while (next)
+      img = imgs.pop()
+      if !!img
+        if img.startsWith("http")
+          website.img = img
+        else
+          website.img = website.url + img
+        next = false
     website.createdOn = new Date
     website.vote = 0
     Websites.insert website

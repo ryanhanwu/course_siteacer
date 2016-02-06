@@ -1,6 +1,11 @@
 @Websites = new (Mongo.Collection)('websites')
 @Comments = new (Mongo.Collection)('comments')
 
+@WebsitesIndex = new EasySearch.Index
+  collection: Websites
+  fields: ['title', 'description']
+  engine: new EasySearch.Minimongo()
+
 Websites.allow
   insert: (userId, doc) ->
     !!userId

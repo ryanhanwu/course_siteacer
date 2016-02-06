@@ -7,15 +7,26 @@
 	<nav class="navbar navbar-default navbar-fixed-top">
 	  <div class="container">
 	    <div class="navbar-header">
+		    <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#nav-items" aria-expanded="false">
+	        <span class="sr-only">Toggle navigation</span>
+	        <span class="icon-bar"></span>
+	        <span class="icon-bar"></span>
+	        <span class="icon-bar"></span>
+	      </button>
 	      <a class="navbar-brand" href="{{pathFor 'index'}}">
 	        Site Acer
 	      </a>
 	    </div>
-			<div class="collapse navbar-collapse">
+			<div class="collapse navbar-collapse" id="nav-items">
 	    	<ul class="nav navbar-nav navbar-right">
 	    		{{> website_form}}
           {{> loginButtons}}
         </ul>
+        <form class="navbar-form navbar-right" role="search">
+	        <div class="form-group">
+	          {{> EasySearch.Input index=websiteIndex attributes=searchAttributes }}
+	        </div>
+	      </form>
 	    </div>
 	  </div>
 	</nav>

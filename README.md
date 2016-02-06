@@ -1,9 +1,8 @@
-Coursera Site Ace
+# Site Acer
 
 Meteor Site: [siteacer.meteor.com](siteacer.meteor.com)
 
 ## Instructions
-You are to make a website aggregator application. The purpose of the application is to allow users to share, discuss and rate pages they find on the internet. You are provided with some starter code which displays a simple list of websites. You can gain up to 70% by implementing the following features:
 
 - [X] Users can register and login.
 
@@ -23,7 +22,7 @@ You are to make a website aggregator application. The purpose of the application
 - [X] Challenge 1: Automatic information
 Can you use the HTTP package for Meteor to pull in information about the posted web links automatically, so the user does not need to enter anything other than the URL?
 
-Challenge 2: Search function
+- [X] Challenge 2: Search function
 Implement a search function that allows the user to search within the listed sites for key words
 
 Challenge 3: Website recommender

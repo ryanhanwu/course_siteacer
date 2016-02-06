@@ -8,3 +8,8 @@ Template.registerHelper "isLoggedIn", () ->
 
 Template.registerHelper "createdFromNow", (date) ->
   moment(date).fromNow()
+
+Template.registerHelper "websiteIndex", WebsitesIndex
+Template.registerHelper "searchAttributes",
+  class: 'form-control'
+  placeholder: 'Search'

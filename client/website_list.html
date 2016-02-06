@@ -1,7 +1,7 @@
 <template name="website_list">
   <ul class="website-list">
-    {{#each websites}}
+    {{#EasySearch.Each index=websiteIndex }}
       {{>website_item}}
-    {{/each}}
+    {{/EasySearch.Each}}
   </ul>
 </template>

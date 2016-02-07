@@ -2,7 +2,9 @@ Template.layout.helpers
   transition: () ->
     (from, to, element) ->
       with: 'slide-height'
-  searchAttributes: class: 'form-control', placeholder: 'Search'
+  searchAttributes:
+    class: 'form-control'
+    placeholder: 'Search'
 
 Template.registerHelper "isLoggedIn", () ->
   User.isLoggedIn()

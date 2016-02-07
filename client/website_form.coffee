@@ -11,7 +11,6 @@ Template.website_form.events
         $('input').val("")
         Meteor.call "addSite", data, (err, response) ->
           NProgress.done()
-          $('#website_form').dropdown('toggle')
         $("#url").parent().removeClass('has-error')
       else
         $("#url").parent().addClass('has-error')

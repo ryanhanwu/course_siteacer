@@ -3,5 +3,9 @@
     {{#EasySearch.Each index=websiteIndex }}
       {{>website_item}}
     {{/EasySearch.Each}}
+    {{> EasySearch.Pagination index=websiteIndex maxPages=10}}
+    {{#EasySearch.IfNoResults index=websiteIndex}}
+      <li>We're sorrt, no search results found. Would you like to add some?</li>
+    {{/EasySearch.IfNoResults}}
   </ul>
 </template>

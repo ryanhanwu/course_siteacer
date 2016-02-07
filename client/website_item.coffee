@@ -6,6 +6,8 @@ Template.website_item.events
       website = Websites.findOne website_id
       vote = website.vote + 1
       Websites.update website._id, $set: vote: vote
+    else
+      sAlert.warning 'You have to sign in to vote'
     false
     # prevent the button from reloading the page
   'click .js-downvote': (event) ->
@@ -15,6 +17,8 @@ Template.website_item.events
       website = Websites.findOne website_id
       vote = website.vote - 1
       Websites.update website._id, $set: vote: vote
+    else
+      sAlert.warning 'You have to sign in to vote'
     false
     # prevent the button from reloading the page
 
